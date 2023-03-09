@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Base Tags -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="SPA, Single Page Application, WebApp, Image, Gallery">
+	<meta name="author" content="Liyan Anajao">
+	<meta name="title" content="Image Gallery">
+	<meta name="description" content="Find the best pictures for free!">
+	<!-- Facebook Meta Tags -->
+	<meta property="og:url" content="https://liyannguyen.github.io/Image-Gallery/">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Image Gallery">
+	<meta property="og:description" content="Find the best pictures for free!">
+	<meta property="og:image" content="https://liyannguyen.github.io/Image-Gallery/images/thumnbnail.png">
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="twitter:domain" content="liyannguyen.github.io">
+	<meta property="twitter:url" content="https://liyannguyen.github.io/Image-Gallery/">
+	<meta name="twitter:title" content="Image Gallery">
+	<meta name="twitter:description" content="Find the best pictures for free!">
+	<meta name="twitter:image" content="https://liyannguyen.github.io/Image-Gallery/images/thumnbnail.png">
+
+	<title>Image Gallery</title>
+	<!-- Fontawesome CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="tablet.css" media="screen and (max-width: 768px)">
+	<link rel="icon" href="images/web-icon.png">
+</head>
+<body style="display: none;">
+	<div id="mobile-menu" class="fas fa-bars"></div>
+	<!-- Sidebar -->
+	<aside class="sidebar">
+		<h1 class="heading">filter images</h1>
+		<div class="box">
+			<h3 class="title">by keywords: </h3>
+			<input type="text" placeholder="type in keywords..." id="search-box">
+		</div>
+		<div class="box">
+			<h3 class="title">or by category: </h3>
+			<div>
+				<button class="category-btn" img-category="all">any</button>
+				<button class="category-btn" img-category="animal">animals</button>
+				<button class="category-btn" img-category="food">food</button>
+				<button class="category-btn" img-category="fish">fish</button>
+				<button class="category-btn" img-category="flower">flower</button>
+			</div>
+		</div>
+		<div class="box">
+			<h3 class="title">or by file type: </h3>
+			<div>
+				<button class="type-btn" img-type="all">any</button>
+				<button class="type-btn" img-type="jpg">jpg</button>
+				<button class="type-btn" img-type="png">png</button>
+				<button class="type-btn" img-type="svg">svg</button>
+			</div>
+		</div>
+		<div class="flex-box">
+			<i class="slider-icon fa-solid fa-sun"></i>
+			<label class="switch">
+				<input type="checkbox">
+				<span id="dark-theme-toggle" class="slider"></span>
+			</label>
+			<i class="slider-icon fa-solid fa-moon"></i>
+		</div>
+	</aside>
+	<div class="dark-blocker"></div>
+	<!-- Image Gallery Section -->
+	<section class="gallery">
+		<h1 class="heading">gallery</h1>
+		<div class="image-container">
+			<img class="img" src="images/img-1.jpg" img-cat="animal" img-keywords="animal bird cute chicks" alt="">
+			<img class="img" src="images/img-2.svg" img-cat="food" img-keywords="vector cookies christmas" alt="">
+			<img class="img" src="images/img-3.png" img-cat="food" img-keywords="food corn cartoon png" alt="">
+			<img class="img" src="images/img-4.jpg" img-cat="fish" img-keywords="animal fish dolphin" alt="">
+			<img class="img" src="images/img-5.jpg" img-cat="animal" img-keywords="animal squirrel cute" alt="">
+			<img class="img" src="images/img-6.png" img-cat="animal" img-keywords="animal panda png cartoon" alt="">
+			<img class="img" src="images/img-7.svg" img-cat="animal" img-keywords="animal penguine bird cartoon" alt="">
+			<img class="img" src="images/img-8.jpg" img-cat="animal" img-keywords="animal bird cute" alt="">
+			<img class="img" src="images/img-9.png" img-cat="animal" img-keywords="animal cat mouse cute png" alt="">
+			<img class="img" src="images/img-10.svg" img-cat="fish" img-keywords="animal fish shark vector" alt="">
+			<img class="img" src="images/img-11.jpg" img-cat="food" img-keywords="food orange" alt="">
+			<img class="img" src="images/img-12.svg" img-cat="food" img-keywords="food vector juice drink" alt="">
+			<img class="img" src="images/img-13.png" img-cat="food" img-keywords="food chicken cartoon png" alt="">
+			<img class="img" src="images/img-14.jpg" img-cat="food" img-keywords="food coffee bread breakfast" alt="">
+			<img class="img" src="images/img-15.png" img-cat="food" img-keywords="food burger png cartoon" alt="">
+			<img class="img" src="images/img-16.svg" img-cat="food" img-keywords="food popcorn vector" alt="">
+			<img class="img" src="images/img-17.jpg" img-cat="food" img-keywords="food pancake breakfast" alt="">
+			<img class="img" src="images/img-18.svg" img-cat="flower" img-keywords="flower plants nature vector" alt="">
+			<img class="img" src="images/img-19.png" img-cat="flower" img-keywords="flower plants nature cartoon" alt="">
+			<img class="img" src="images/img-20.jpg" img-cat="flower" img-keywords="flower plants nature" alt="">
+		</div>
+	</section>
+	<div class="popup-image-container">
+		<img class="popup-img" src="" alt="">
+	</div>
+	<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+:root {
+	font-size: 55%;
+}
+
+#mobile-menu {
+	display: inline-block; /*show mobile menu */
+}
+
+.sidebar {
+	left: -100%;
+}
+
+.sidebar.active {
+	left: 0;
+}
+
+.gallery {
+	padding-left: 2rem;
+}

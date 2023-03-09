@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root{
+	font-size: 62.5%;
+	--theme-color:#008B8B;
+	--background-color: #eee;
+	--sidebar-bg: white;
+	--text-color:#333;
+	--component-bg:#eee;
+	--dark-bg:rgba(0,0,0,.7);
+	--border:1px solid var(--theme-color);
+	--box-shadow:0 .5rem 1rem rgba(0,0,0,.2);
+}
+
+*{
+	font-family: 'Poppins', sans-serif;
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	outline: none;
+	border:none;
+	text-decoration: none;
+	transition: all .2s linear;
+}
+
+body {
+	background-color: var(--background-color);
+}
+
+::-webkit-scrollbar {
+	width: .8rem;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--theme-color);
+	border-radius: 5rem;
+}
+
+.heading {
+	text-align: center;
+	font-size: 3.5rem;
+	color: var(--theme-color);
+	text-transform: capitalize;
+}
+
+/* IMAGE GALLERY SECTION */
+.gallery {
+	min-height: 100vh;
+	padding: 2rem;
+	padding-left: 32rem; /*base on sidebar size*/
+}
+
+.image-container {
+	padding-top: 2rem;
+	columns: 3 35rem; /*make 3 colums 35 rem each size*/
+	column-gap: 1.5rem;
+}
+
+.img {
+	width: 100%;
+	margin-bottom: 1rem;
+	cursor: pointer;
+	box-shadow: var(--box-shadow);
+	border-radius: 1rem;
+}
+
+.img:hover {
+	transform: scale(0.95);
+	outline: .2rem solid var(--theme-color);
+}
+
+/* SIDEBAR */
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 30rem;
+	background-color: var(--sidebar-bg);
+	border-right: var(--border);
+	padding: 2rem;
+	height: 100vh;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.sidebar::-webkit-scrollbar {
+	width: .5rem;
+}
+
+.title {
+	margin-bottom: 1rem;
+	font-size: 2rem;
+	color: var(--text-color);
+	text-transform: capitalize;
+}
+
+#search-box {
+	width: 100%;
+	border: var(--border);
+	padding: 1.2rem;
+	font-size: 1.7rem;
+	color: var(--text-color);
+	border-radius: .5rem;
+	background-color: var(--component-bg);
+}
+
+#search-box:focus {
+	outline: .1rem solid var(--theme-color);
+}
+
+#search-box::placeholder {
+	font-style: italic;
+	font-size: 1.4rem;
+	color: var(--text-color);
+	transition: all .2s linear;
+}
+
+.box {
+	border-bottom: var(--border);
+	padding: 2rem 0;
+}
+
+.flex-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom: var(--border);
+	padding: 2rem 0;
+}
+
+.category-btn,
+.type-btn {
+	display: inline-block;
+	margin: .5rem;
+	background-color: var(--component-bg);
+	color: var(--text-color);
+	cursor: pointer;
+	font-size: 1.7rem;
+	padding: 1rem 2rem;
+	text-transform: capitalize;
+	border-radius: .5rem;
+}
+
+.category-btn:hover,
+.type-btn:hover,
+.category-btn.active,
+.type-btn.active {
+	background-color: var(--theme-color);
+	color: white;
+}
+
+/* THEME SWITCH TOGGLE */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 6rem;
+	height: 3.5rem;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	border-radius: 3.5rem;
+	transition: all .2s linear;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 2.5rem;
+	width: 2.5rem;
+	left: .5rem;
+	bottom: .5rem;
+	background-color: white;
+	border-radius: 50%;
+	transition: all .2s linear;
+}
+
+input:checked + .slider {
+	background-color: var(--theme-color);
+}
+
+input:checked + .slider:before {
+	transform: translateX(2.5rem);
+}
+
+.slider-icon {
+	font-size: 3rem;
+	padding: 0 3rem;
+	color: #666;
+}
+
+/* MOBILE MENU TOGGLER */
+#mobile-menu {
+	position: fixed;
+	top: 2rem;
+	right: 2rem;
+	z-index: 2;
+	height: 5rem;
+	width: 5rem;
+	line-height: 5rem;
+	font-size: 2rem;
+	color: var(--text-color);
+	background-color: var(--sidebar-bg);
+	border: var(--border);
+	box-shadow: var(--box-shadow);
+	text-align: center;
+	cursor: pointer;
+	display: none; /*initially hide mobile menu*/
+}
+
+/* DARK BLOCKER WHEN MOBILE MENU IS ACTIVE */
+.dark-blocker.active {
+	background-color: var(--dark-bg);
+	height: 100vh;
+	width: 100vw;
+	z-index: 1;
+	position: fixed;
+}
+
+/* POPUP IMAGE */
+.popup-image-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	background-color: var(--dark-bg);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	padding: 10rem 2rem;
+	height: 100%;
+	width: 100%;
+	overflow-y: scroll;
+}
+
+.popup-img {
+	width: 60rem;
+	cursor: pointer;
+	border-radius: 1rem;
+}
